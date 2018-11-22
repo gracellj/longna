@@ -7,7 +7,84 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    banner: [
+      {
+        id: "1",
+        image_url: "../../images/banner1.jpg"
+      },
+      {
+        id: "2",
+        image_url: "../../images/banner2.jpg"
+      },
+      {
+        id: "3",
+        image_url: "../../images/banner3.jpg"
+      },
+      {
+        id: "4",
+        image_url: "../../images/banner4.jpg"
+      },
+      {
+        id: "5",
+        image_url: "../../images/banner5.jpg"
+      }
+    ],
+    channel:[
+      {
+        id:"1",
+        icon_url:"../../images/ic_menu_choice_nor.png",
+        name: "公司介绍",
+        url: "pages/index/index"
+      },
+      {
+        id: "2",
+        icon_url: "../../images/ic_menu_choice_nor.png",
+        name: "享优惠",
+        url: "pages/index/index"
+      },
+      {
+        id: "3",
+        icon_url: "../../images/ic_menu_choice_nor.png",
+        name: "看工地",
+        url: "pages/index/index"
+      },
+      {
+        id: "4",
+        icon_url: "../../images/ic_menu_choice_nor.png",
+        name: "免费量房",
+        url: "pages/index/index"
+      }
+    ],
+    markers:[
+      {
+        id: 0,
+        latitude: 23.099994,
+        longitude: 113.324520,
+        width: 50,
+        height: 50
+      }
+    ],
+    works:[
+      {
+        image_url:"../../images/banner3.jpg",
+        url: "/pages/index/index",
+        name:"珑纳1",
+        size: 50
+      },
+      {
+        image_url: "../../images/banner4.jpg",
+        url: "/pages/index/index",
+        name: "珑纳2",
+        size: 100
+      }
+    ],
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    designUrl: "/pages/index/index",
+    meter: {
+      image_url: "../../images/meter.jpg",
+      url: "/pages/index/index"
+    },
+    mapContext: null
   },
   //事件处理函数
   bindViewTap: function() {

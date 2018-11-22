@@ -1,13 +1,50 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
+      <image src="{{item.image_url}}" background-size="cover"></image>
+    </swiper-item>
+  </swiper>
+  <view class="m-menu">
+    <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
+      <image src="{{item.icon_url}}" background-size="cover"></image>
+      <text>{{item.name}}</text>
+    </navigator>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="m-design">
+    <view class="m-design_header">
+      <text>设计作品|Design works</text>
+      <navigator class="m-design_navigator" url="{{designUrl}}">查看更多</navigator>
+    </view>
+    <view class="m-works" wx:for="{{works}}" wx:key="{{item.size}}">
+      <navigator class="m-work" url="{{item.url}}">
+        <view class="m-wrap">
+          <image src="{{item.image_url}}" background-size="cover"></image>
+          <text>楼盘:{{item.name}}|面积:{{item.size}}平</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="m-service">
+    <navigator url="{{meter.url}}">
+      <image src="{{meter.image_url}}"></image>
+    </navigator> 
+  </view>
+  <view class="m-meter">
+    <view class="m-meter_label">
+      <text class="m-meter_a">预约免费量房</text>
+      <text class="m-meter_b">Reservation for free room</text>
+    </view>
+    <form class="m-form">
+      <input placeholder="名字"></input>
+      <input placeholder="联系方式"></input>
+      <input placeholder="楼盘"></input>
+      <button>立即预约</button>
+    </form>
+    <view class="m-our">
+      <text>公司名称:珑纳空间装饰设计</text>
+      <text>地址:金桥路1399号</text>
+      <text>联系电话:400-400-000</text>
+    </view>
   </view>
 </view>

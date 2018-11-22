@@ -1,21 +1,144 @@
 /**index.wxss**/
-.userinfo {
+.container {
+  margin: 0rpx;
+  padding: 0rpx;
+}
+.banner {
+  width: 750rpx;
+  height: 417rpx;
+}
+
+.banner image {
+  width: 100%;
+  height: 417rpx;
+}
+
+.m-menu {
   display: flex;
-  flex-direction: column;
+  height: 100rpx;
+  width: 750rpx;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.m-menu .item {
+  flex: 1;
+  display: block;
+  padding: 10rpx 0;
+}
+
+.m-menu image {
+  display: block;
+  width: 58rpx;
+  height: 58rpx;
+  margin: 0 auto;
+  margin-bottom: 2rpx;
+}
+
+.m-menu text {
+  display: block;
+  font-size: 24rpx;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1;
+  color: #333;
+}
+
+.m-design {
+  height: 1050rpx;
+  width: 750rpx;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.m-design .m-design_header {
+  display: flex;
+  height: 60rpx;
+  width: 750rpx;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.m-design .m-design_header text {
+  display: flex;
+  color: #000;
+  font-size: 24rpx;
+}
+
+.m-design .m-design_header .m-design_navigator {
+  display: flex;
+  color: #888888;
+  font-size: 20rpx;
+}
+
+.m-works {
+  position: relative;
+}
+
+.m-wrap image{
+  width: 100%;
+}
+
+.m-wrap text {
+  position: absolute;
+  display: block;
+  font-size: 20rpx;
+  left: 0;
+  top: 0rpx;
+}
+
+.m-service {
+  height: 650rpx;
+  width: 750rpx;
+  background-color: #000;
+}
+
+.m-service image {
+  width: 100%;
+  height: 650rpx;
+}
+
+.m-meter_label {
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+}
+.m-meter_a {
+  color: #ff0000;
+  display: block;
+  text-align: center;
+}
+
+.m-meter_b {
+  color: #aaaaaa;
+  font-size: 18rpx;
+  display: block;
+  text-align: center;
+}
+
+.m-form input {
+  height: 20rpx;
+  border: solid thin;
+  width: 450rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
   align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.m-form button {
+  background-color: rgba(42, 218, 72, 0.795);
+  margin-bottom: 20rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.m-our {
+  margin-top: 20rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.m-our text {
+  display: block;
+  text-align: center;
+  font-size: 25rpx;
 }
