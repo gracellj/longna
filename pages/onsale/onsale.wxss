@@ -1,0 +1,102 @@
+/* pages/onsale/onsale.wxss */
+.m-onsale {
+  width: 750rpx;
+}
+.m-onsale_header {
+  height: 417rpx;
+}
+.m-onsale_header image {
+  width: 100%;
+  height: 417rpx;
+}
+
+.m-onsale_content {
+  background-color: gainsboro;
+  padding: 0;
+}
+
+.m-onsale_tile {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.m-onsale_tile_a {
+  color: red;
+  display: block;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.m-onsale_tile_b {
+  color: gray;
+  display: block;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.m-onsale_images {
+  float: left;
+  align-items: center;
+  background: gainsboro;
+}
+
+.m-onsale_block {
+  display: block;
+  width: 150rpx;
+  height: 200rpx;
+  margin: 50rpx;
+}
+
+.m-onsale_block image {
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  margin: 0 auto;
+  margin-bottom: 2rpx;
+}
+
+.m-onsale_block text {
+  display: block;
+  font-size: 24rpx;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1;
+  color: #333;
+}
+
+.m-onsale_note {
+  padding-left: 30rpx;
+}
+
+.m-onsale_note text {
+  display: block;
+  font-size: 30rpx;
+}
+
+.m-onsale_note_title {
+  display: block;
+  width: 100rpx;
+  font-size: 30rpx;
+  background-color: red;
+  font-weight: bold;
+}
+
+.m-form_inputs {
+  margin-top: 100rpx;
+}
+
+
+.m-form input {
+  height: 20rpx;
+  border: solid thin;
+  width: 450rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-form button {
+  background-color: rgba(42, 218, 72, 0.795);
+  margin-bottom: 20rpx;
+}

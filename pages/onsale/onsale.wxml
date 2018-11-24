@@ -1,0 +1,32 @@
+<!--pages/onsale/onsale.wxml-->
+<view class="m-onsale">
+  <view class="m-onsale_header">
+    <image src="{{header_image}}" background-size="cover"></image>
+  </view>
+  <view class="m-onsale_content">
+    <view class="m-onsale_tile">
+      <text class="m-onsale_tile_a">[预约即享 专属优惠]</text>
+      <text class="m-onsale_tile_b">Reservation is exclusive</text>
+    </view>
+    <view class="m-onsale_images" wx:for="{{sales}}">
+      <view class="m-onsale_block">
+        <image src="{{item.image_url}}" background-size="cover"></image>
+        <text>{{item.text}}</text>
+      </view>
+    </view>
+    <view class="m-onsale_note">
+      <text class="m-onsale_note_title">备注:</text>
+      <text>1. 签订合同，送空气净化器(200平以上)</text>
+      <text>2. 设计费折上折，最高可达8折</text>
+      <text>3. 签订施工全案</text>
+    </view>
+    <form class="m-form" bindsubmit="formSubmit">
+      <view class="m-form_inputs">
+        <input placeholder="名字" name="name"></input>
+        <input placeholder="联系电话" name="tel" type="number"></input>
+        <input placeholder="楼盘" name="position"></input>
+      </view>
+      <button formType="submit">立即预约</button>
+    </form>
+  </view>
+</view>

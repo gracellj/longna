@@ -31,28 +31,28 @@ Page({
     ],
     channel:[
       {
-        id:"1",
+        id:1,
         icon_url:"../../images/ic_menu_choice_nor.png",
         name: "公司介绍",
-        url: "pages/index/index"
+        url: "/pages/index/index"
       },
       {
-        id: "2",
+        id: 2,
         icon_url: "../../images/ic_menu_choice_nor.png",
         name: "享优惠",
-        url: "pages/index/index"
+        url: "../onsale/onsale"
       },
       {
-        id: "3",
+        id: 3,
         icon_url: "../../images/ic_menu_choice_nor.png",
         name: "看工地",
-        url: "pages/index/index"
+        url: "../logs/logs"
       },
       {
-        id: "4",
+        id: 4,
         icon_url: "../../images/ic_menu_choice_nor.png",
         name: "免费量房",
-        url: "pages/index/index"
+        url: "/pages/index/index"
       }
     ],
     markers:[
@@ -127,5 +127,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  formSubmit: function(e) {
+    console.log(e.detail.value)
   }
 })

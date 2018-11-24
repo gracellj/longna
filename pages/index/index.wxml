@@ -13,7 +13,7 @@
   </view>
   <view class="m-design">
     <view class="m-design_header">
-      <text>设计作品|Design works</text>
+      <text>设计作品 | Design works</text>
       <navigator class="m-design_navigator" url="{{designUrl}}">查看更多</navigator>
     </view>
     <view class="m-works" wx:for="{{works}}" wx:key="{{item.size}}">
@@ -35,11 +35,11 @@
       <text class="m-meter_a">预约免费量房</text>
       <text class="m-meter_b">Reservation for free room</text>
     </view>
-    <form class="m-form">
-      <input placeholder="名字"></input>
-      <input placeholder="联系方式"></input>
-      <input placeholder="楼盘"></input>
-      <button>立即预约</button>
+    <form class="m-form" bindsubmit="formSubmit">
+      <input placeholder="名字" name="name"></input>
+      <input placeholder="联系电话" name="tel" type="number"></input>
+      <input placeholder="楼盘" name="position"></input>
+      <button formType="submit">立即预约</button>
     </form>
     <view class="m-our">
       <text>公司名称:珑纳空间装饰设计</text>

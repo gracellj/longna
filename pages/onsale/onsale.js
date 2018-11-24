@@ -1,11 +1,19 @@
-// pages/onsale.js
+// pages/onsale/onsale.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    header_image:"../../images/banner3.jpg",
+    sales: [
+      {image_url: "../../images/ic_menu_choice_nor.png",text:"送验房服务"},
+      {image_url: "../../images/ic_menu_choice_nor.png", text: "送量房服务"},
+      { image_url: "../../images/ic_menu_choice_nor.png", text: "送软装设计" },
+      { image_url: "../../images/ic_menu_choice_nor.png", text: "签合同送净水器" },
+      { image_url: "../../images/ic_menu_choice_nor.png", text: "设计费折上折" },
+      { image_url: "../../images/ic_menu_choice_nor.png", text: "签订施工全案" },
+    ]
   },
 
   /**
@@ -62,5 +70,8 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  formSubmit: function (e) {
+    console.log(e.detail.value)
   }
 })
