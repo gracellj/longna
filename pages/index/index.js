@@ -10,49 +10,58 @@ Page({
     banner: [
       {
         id: "1",
-        image_url: "../../images/banner1.jpg"
+        image_url: "",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/banner1.jpg"
       },
       {
         id: "2",
-        image_url: "../../images/banner2.jpg"
+        image_url: "",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/banner2.jpg"
       },
       {
         id: "3",
-        image_url: "../../images/banner3.jpg"
+        image_url: "",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/banner3.jpg"
       },
       {
         id: "4",
-        image_url: "../../images/banner4.jpg"
+        image_url: "",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/banner4.jpg"
       },
       {
         id: "5",
-        image_url: "../../images/banner5.jpg"
+        image_url: "",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/banner5.jpg"
       }
     ],
     channel:[
       {
         id:1,
-        icon_url:"../../images/ic_menu_choice_nor.png",
+        icon_url:"",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/ic_menu_choice_nor.png",
         name: "公司介绍",
         url: "/pages/index/index"
       },
       {
         id: 2,
-        icon_url: "../../images/ic_menu_choice_nor.png",
+        icon_url: "",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/ic_menu_choice_nor.png",
         name: "享优惠",
         url: "../onsale/onsale"
       },
       {
         id: 3,
-        icon_url: "../../images/ic_menu_choice_nor.png",
+        icon_url: "",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/ic_menu_choice_nor.png",
         name: "看工地",
-        url: "../logs/logs"
+        url: "../site/site"
       },
       {
         id: 4,
-        icon_url: "../../images/ic_menu_choice_nor.png",
+        icon_url: "",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/ic_menu_choice_nor.png",
         name: "免费量房",
-        url: "/pages/index/index"
+        url: "../onsale/onsale"
       }
     ],
     markers:[
@@ -66,22 +75,25 @@ Page({
     ],
     works:[
       {
-        image_url:"../../images/banner3.jpg",
+        image_url:"",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/design1.jpg",
         url: "/pages/index/index",
-        name:"珑纳1",
+        name:"博兴路小区",
         size: 50
       },
       {
-        image_url: "../../images/banner4.jpg",
+        image_url: "",
+        file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/design2.jpg",
         url: "/pages/index/index",
-        name: "珑纳2",
+        name: "御青路",
         size: 100
       }
     ],
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     designUrl: "/pages/index/index",
     meter: {
-      image_url: "../../images/meter.jpg",
+      image_url: "",
+      file_id: "cloud://longna-staging-f26ba5.6c6f-longna-staging-f26ba5/longna/meter.jpg",
       url: "/pages/index/index"
     },
     mapContext: null
@@ -119,6 +131,66 @@ Page({
         }
       })
     }
+
+    // 加载图片
+    for (let i = 0; i < this.data.banner.length; i++) {
+      wx.cloud.downloadFile({
+        fileID: this.data.banner[i].file_id,
+        success: res => {
+          var key = 'banner[' + i + '].image_url'
+          this.setData(
+            {
+              [key]: res.tempFilePath
+            }
+          )
+        },
+        fail: err => {
+          console.log(err)
+        }
+      })
+    }
+
+    for (let i = 0; i < this.data.channel.length; i++) {
+      wx.cloud.downloadFile({
+        fileID: this.data.channel[i].file_id,
+        success: res => {
+          var key = 'channel[' + i + '].icon_url'
+          this.setData(
+            {
+              [key]: res.tempFilePath
+            }
+          )
+        },
+        fail: err => {
+          console.log(err)
+        }
+      })
+    }
+
+    for (let i = 0; i < this.data.works.length; i++) {
+      console.log(this.data.works[i].file_id)
+      wx.cloud.downloadFile({
+        fileID: this.data.works[i].file_id,
+        success: res => {
+          var key = 'works[' + i + '].image_url'
+          this.setData(
+            {
+              [key]: res.tempFilePath
+            }
+          )
+        },
+        fail: err => {
+          console.log(err)
+        }
+      })
+    }
+
+    wx.cloud.downloadFile({
+      fileID: this.data.meter.file_id,
+      success: res => {
+        this.setData({'meter.image_url': res.tempFilePath})
+      }
+    })
   },
   getUserInfo: function(e) {
     console.log(e)

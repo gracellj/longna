@@ -6,6 +6,9 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    // 云端
+    wx.cloud.init({ env: "longna-staging-f26ba5"})
+
     // 登录
     wx.login({
       success: res => {

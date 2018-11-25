@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/onsale/onsale"
+    "pages/onsale/onsale",
+    "pages/site/site"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,5 +34,6 @@
         "text": "我要装修"
       }
     ]
-  }
+  },
+  "cloud": true
 }

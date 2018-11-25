@@ -47,7 +47,6 @@
 }
 
 .m-design {
-  height: 1050rpx;
   width: 750rpx;
   background-color: #fff;
   overflow: hidden;
@@ -60,7 +59,7 @@
   flex-flow: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #bbb;
+  background-color: #eee;
 }
 
 .m-design .m-design_header text {
